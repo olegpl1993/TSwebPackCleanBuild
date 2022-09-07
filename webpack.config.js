@@ -17,7 +17,7 @@ module.exports = {
         clean: true,
     },
     resolve: {
-        extensions: [".ts", ".js"]
+        extensions: [".ts", ".js", ".tsx"]
     },
     devServer: {
         open: true,
@@ -37,7 +37,10 @@ module.exports = {
         })],
     module: {
         rules: [
-
+            { 
+                test: /\.tsx?$/, 
+                loader: "ts-loader"
+            },
             {
                 test: /\.(sa|sc|c)ss$/,
                 use: [
