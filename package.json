@@ -1,7 +1,7 @@
 {
-  "name": "tsCleanBuild",
+  "name": "clean-build",
   "version": "1.0.0",
-  "description": "tsCleanBuild",
+  "description": "clean-build",
   "main": "index.ts",
   "scripts": {
     "start": "set NODE_ENV=development&&webpack serve --open",
@@ -15,11 +15,14 @@
   "devDependencies": {
     "@babel/core": "^7.18.10",
     "@babel/preset-env": "^7.18.10",
-    "@typescript-eslint/eslint-plugin": "^5.46.1",
-    "@typescript-eslint/parser": "^5.46.1",
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
     "babel-loader": "^8.2.5",
+    "babel-preset-airbnb": "^5.0.0",
     "css-loader": "^6.7.1",
     "eslint": "^8.29.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-airbnb-typescript": "^17.0.0",
     "html-loader": "^4.1.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",

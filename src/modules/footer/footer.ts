@@ -1,11 +1,12 @@
-import './footer.scss'
-import { createElement } from '../createElement'
+import './footer.scss';
+import createElement from '../createElement';
 
-export function footer(footerBox: HTMLElement) {
-  while (footerBox.firstChild) footerBox.removeChild(footerBox.firstChild); // очищаем узел footerBox
+export default function footer(footerBox: HTMLElement) {
+  // очищаем узел footerBox
+  while (footerBox.firstChild) footerBox.removeChild(footerBox.firstChild);
 
-  const footer = createElement(footerBox, 'div', 'footer');
-  const footerText = createElement(footer, 'div', 'footerText', 'footer 2023');
+  const footerContainer = createElement(footerBox, 'div', 'footer');
+  createElement(footerContainer, 'div', 'footerText', 'footer 2023');
 
-  return footer;
+  return footerContainer;
 }

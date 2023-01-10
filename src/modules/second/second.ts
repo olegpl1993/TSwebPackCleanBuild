@@ -1,8 +1,8 @@
-import './second.scss'
-import { createElement } from '../createElement'
+import './second.scss';
+import createElement from '../createElement';
 
-export function secondPage(contentBox: HTMLElement) {
-  while (contentBox.firstChild) contentBox.removeChild(contentBox.firstChild); // очищаем узел contentBox
+export default function secondPage(contentBox: HTMLElement) { // очищаем узел contentBox
+  while (contentBox.firstChild) contentBox.removeChild(contentBox.firstChild);
 
   const secondBox = createElement(contentBox, 'div', 'secondPage', 'second page');
 

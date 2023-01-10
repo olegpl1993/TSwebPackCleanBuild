@@ -1,9 +1,11 @@
-import './error.scss'
-import { createElement } from '../createElement'
+import './error.scss';
+import createElement from '../createElement';
 
-export function errorPage(contentBox: HTMLElement) {
-  while (contentBox.firstChild) contentBox.removeChild(contentBox.firstChild); // очищаем узел contentBox
+export default function errorPage(contentBox: HTMLElement) {
+  // очищаем узел contentBox
+  while (contentBox.firstChild) contentBox.removeChild(contentBox.firstChild);
 
   const error = createElement(contentBox, 'div', 'error', '404: page not found');
+
   return error;
 }
