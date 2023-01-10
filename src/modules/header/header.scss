@@ -4,7 +4,11 @@
   gap: 10px;
   padding: 5px;
 
-  .menuBtn {
+  .menuLink {
     font-size: 25px;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

@@ -11,16 +11,9 @@ export const headerBox = createElement(wrapper, 'div', 'headerBox');
 export const contentBox = createElement(wrapper, 'div', 'contentBox');
 export const footerBox = createElement(wrapper, 'div', 'footerBox');
 
-export function route(event: Event) {
-  event.preventDefault(); // отменяет стандартное поведение якоря
-  window.history.pushState({}, "", (event.target as HTMLAnchorElement).href); //меняет строку в браузере
-  router();
-}
-
 export function router() {
-  while (contentBox.firstChild) contentBox.removeChild(contentBox.firstChild); // очищаем узел contentBox
   const hash = window.location.hash; //получает хеш из строки браузера
-  if (hash === '' || hash === '#/' || hash === '#/main') mainPage(contentBox);
+  if (hash === '' || hash === '#/' || hash === '#/main') mainPage(contentBox); // рендеринг страницы
   else if (hash === '#/second') secondPage(contentBox);
   else errorPage(contentBox);
 }

@@ -1,7 +1,7 @@
 import './header.scss';
 import { createElement } from '../createElement';
 import logoImg from '../../images/cart.png';
-import { route } from '../..';
+import { router } from '../..';
 
 export function header(headerBox: HTMLElement) {
   while (headerBox.firstChild) headerBox.removeChild(headerBox.firstChild); // очищаем узел headerBox
@@ -14,12 +14,17 @@ export function header(headerBox: HTMLElement) {
   logo.height = 50;
   logo.loading = 'lazy';
 
-  const mainPageA = createElement(headerContainer, 'a', 'mainPageBtn menuBtn', 'main');
-  (mainPageA as HTMLAnchorElement).href = '#/main';
-  mainPageA.addEventListener('click', (event) => route(event));
-  const secondPageA = createElement(headerContainer, 'a', 'secondPageBtn menuBtn', 'second');
-  (secondPageA as HTMLAnchorElement).href = '#/second';
-  secondPageA.addEventListener('click', (event) => route(event));
+  const mainPageLink = createElement(headerContainer, 'div', 'mainPageLink menuLink', 'main');
+  mainPageLink.addEventListener('click', () => {
+    window.history.pushState({}, "", '#/main'); //меняет строку в браузере
+    router(); // роутинг по страницам
+  });
+
+  const secondPageLink = createElement(headerContainer, 'div', 'secondPageLink menuLink', 'second');
+  secondPageLink.addEventListener('click', () => {
+    window.history.pushState({}, "", '#/second');
+    router();
+  });
 
   return headerContainer;
 }
