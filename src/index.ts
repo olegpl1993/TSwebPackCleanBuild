@@ -17,6 +17,7 @@ export function router() {
   else if (hash === '#/second') secondPage(contentBox);
   else errorPage(contentBox);
 }
+window.addEventListener('hashchange', router); // срабатывает на изменение хеша в строке url
 
 window.addEventListener('load', () => {
   header(headerBox);

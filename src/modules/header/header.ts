@@ -1,7 +1,6 @@
 import './header.scss';
 import { createElement } from '../createElement';
 import logoImg from '../../images/cart.png';
-import { router } from '../..';
 
 export function header(headerBox: HTMLElement) {
   while (headerBox.firstChild) headerBox.removeChild(headerBox.firstChild); // очищаем узел headerBox
@@ -15,16 +14,10 @@ export function header(headerBox: HTMLElement) {
   logo.loading = 'lazy';
 
   const mainPageLink = createElement(headerContainer, 'div', 'mainPageLink menuLink', 'main');
-  mainPageLink.addEventListener('click', () => {
-    window.history.pushState({}, "", '#/main'); //меняет строку в браузере
-    router(); // роутинг по страницам
-  });
+  mainPageLink.addEventListener('click', () => { window.location.hash = '#/main' });
 
   const secondPageLink = createElement(headerContainer, 'div', 'secondPageLink menuLink', 'second');
-  secondPageLink.addEventListener('click', () => {
-    window.history.pushState({}, "", '#/second');
-    router();
-  });
+  secondPageLink.addEventListener('click', () => { window.location.hash = '#/second' });
 
   return headerContainer;
 }
